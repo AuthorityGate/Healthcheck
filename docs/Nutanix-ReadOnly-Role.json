@@ -1,0 +1,25 @@
+{
+  "_comment_purpose": "AuthorityGate HealthCheck minimum-scope read-only role for Nutanix Prism Central / Element. Only the 11 view_* permissions the AuthorityGate audit actually queries. Nutanix exposes 390+ view_* permissions in total - we deliberately request the smallest subset that produces a complete report so the customer's least-privilege posture is preserved.",
+  "_comment_setup": "Import via Prism Central -> Administration -> Roles -> Create Role and select these 11 permissions, OR POST this JSON to /api/nutanix/v3/roles. Bind the resulting role to the AuthorityGate scan service account at scope 'All clusters' (NOT a specific Project).",
+  "_comment_what_plugins_read": "Each permission maps to one or more AuthorityGate plugins: view_cluster (Cluster Inventory + Data Resilience), view_host (Host Inventory + 30-day CPU/Mem peak), view_vm (VM State Summary), view_storage_container (Storage Container 30-day Peak), view_subnet (AHV Subnet Inventory), view_vm_snapshot (Snapshot Sprawl), view_alert (Active Alerts), view_audit (Audit Events), view_task (Failed Tasks), view_protection_rule + view_recovery_plan (Data Resilience plugin).",
+  "spec": {
+    "name": "AuthorityGate-HealthCheck-ReadOnly",
+    "description": "Minimum-scope read-only role for the AuthorityGate HealthCheck audit. Read inventory + alerts + audit + tasks + 30-day perf rollups. NO mutating permissions.",
+    "resources": {
+      "permission_reference_list": [
+        { "kind": "permission", "name": "view_cluster" },
+        { "kind": "permission", "name": "view_host" },
+        { "kind": "permission", "name": "view_vm" },
+        { "kind": "permission", "name": "view_storage_container" },
+        { "kind": "permission", "name": "view_subnet" },
+        { "kind": "permission", "name": "view_vm_snapshot" },
+        { "kind": "permission", "name": "view_alert" },
+        { "kind": "permission", "name": "view_audit" },
+        { "kind": "permission", "name": "view_task" },
+        { "kind": "permission", "name": "view_protection_rule" },
+        { "kind": "permission", "name": "view_recovery_plan" },
+        { "kind": "permission", "name": "view_lcm_entities" }
+      ]
+    }
+  }
+}

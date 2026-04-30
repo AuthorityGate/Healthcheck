@@ -1,0 +1,166 @@
+AuthorityGate Source-Available License v1.0
+============================================
+
+Copyright (c) 2026 AuthorityGate, Inc. All rights reserved.
+
+This is **not** an open-source license. The source code of HealthCheckPS1
+is published in this repository for transparency, security audit, and
+inspection. Use, modification, and distribution are restricted as described
+below.
+
+For commercial licensing or any use not permitted under Section 2 below,
+contact:    architect@authoritygate.com
+
+
+1. DEFINITIONS
+
+   "Software" means the source code, binaries, plugins, configuration files,
+   reports, telemetry payloads, and accompanying documentation contained in
+   this repository (HealthCheckPS1) and any future versions tagged 2.0 or
+   later.
+
+   "AuthorityGate PSO Customer" means an organization with an active
+   Professional Services Organization engagement contract in effect with
+   AuthorityGate, Inc.
+
+   "Production Use" means any execution of the Software where its outputs
+   inform decisions for, or are delivered to, an organization other than the
+   user's own personal lab or training environment - including but not
+   limited to: customer engagements, internal corporate IT operations,
+   managed-service-provider deliverables, and audit / compliance reports.
+
+   "License Token" means a signed Ed25519 JWT issued by
+   https://license.authoritygate.com that authorizes a named individual on
+   a single machine to run the Software for a limited time window.
+
+
+2. GRANT OF RIGHTS
+
+   Subject to the conditions in Section 3, AuthorityGate, Inc. grants you
+   a non-exclusive, non-transferable, revocable license to:
+
+   (a) View and read the source code in this repository.
+
+   (b) Execute the Software **only when** you hold a valid, non-expired
+       License Token issued to you by AuthorityGate, Inc. This applies to
+       every execution without exception, including evaluation, training,
+       lab, internal IT, customer engagements, and any other use. There
+       is no grace period and no key-less execution path. Operators
+       requiring a short-window evaluation token should contact
+       architect@authoritygate.com (see Section 5).
+
+   (c) Modify the Software for your own internal use, provided that:
+       (i) you do not redistribute the modified Software, and
+       (ii) you notify architect@authoritygate.com of the modification with
+            a brief description.
+
+
+3. RESTRICTIONS
+
+   You may NOT, without prior written permission from AuthorityGate, Inc.:
+
+   (a) Redistribute the Software, modified or unmodified, in source or
+       binary form, to any third party.
+
+   (b) Sublicense, rent, lease, lend, or otherwise transfer your rights
+       under this license.
+
+   (c) Execute the Software without a valid, non-expired License Token.
+
+   (d) Remove, alter, or obscure any copyright notice, license notice, or
+       attribution in the Software.
+
+   (e) Use the Software to provide a competing product or commercial service
+       to third parties.
+
+   (f) Bypass, disable, tamper with, or remove the License Token validation,
+       telemetry submission, or signature verification components of the
+       Software.
+
+   (g) Reverse-engineer, decompile, or extract the embedded Ed25519 public
+       key for the purpose of issuing or accepting unauthorized License
+       Tokens.
+
+
+4. AUTHORITYGATE PSO CUSTOMERS
+
+   AuthorityGate PSO Customers receive License Tokens for Production Use
+   at no additional cost as part of their engagement. Contact
+   architect@authoritygate.com to be added to the auto-issuance list. The
+   Software is provided to PSO Customers under the terms of their
+   engagement contract; the terms of the engagement contract supersede
+   anything in conflict in this license.
+
+
+5. NON-PSO COMMERCIAL USE
+
+   Any organization that is not an AuthorityGate PSO Customer and wishes to
+   use the Software for Production Use must contact
+   architect@authoritygate.com for a commercial license. License Tokens may
+   be issued for evaluation periods of 72 hours at AuthorityGate's sole
+   discretion.
+
+
+6. TELEMETRY
+
+   The Software submits run metadata to https://license.authoritygate.com on
+   each authorized execution. This telemetry includes:
+
+       - the licensee's email address
+       - the machine fingerprint (SHA-256 of MachineGuid)
+       - the Windows hostname of the runner
+       - the timestamp the run started and ended
+       - the FQDNs of the systems scanned (vCenter, Horizon, App Volumes,
+         Unified Access Gateway, NSX, Active Directory)
+       - the document author and customer engagement name as entered by
+         the operator
+       - aggregate plugin counts and severity-band counts of findings
+
+   The Software does NOT transmit:
+       - probe data (registry contents, software inventories, service lists,
+         config dumps)
+       - finding text (KB IDs, recommendations, fixes, evidence)
+       - IP addresses of customer assets
+       - credentials of any kind
+
+   Use of the Software constitutes consent to this telemetry.
+
+
+7. WARRANTY DISCLAIMER
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+   IN NO EVENT SHALL AUTHORITYGATE, INC. OR THE AUTHORS BE LIABLE FOR ANY
+   CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+8. TERMINATION
+
+   This license terminates automatically and without notice if you violate
+   any of its terms. Upon termination you must cease all use of the
+   Software and destroy all copies in your possession. Sections 3 (g),
+   6, 7, and this Section 8 survive termination.
+
+
+9. PRIOR VERSIONS
+
+   Versions of this Software released prior to and including the
+   `v1.x-final-mit` git tag remain available under the MIT License under
+   which they were originally released. The MIT grant on those prior
+   versions is irrevocable. This license applies to versions 2.0 and
+   later only.
+
+
+10. GOVERNING LAW
+
+    This license is governed by the laws of the United States and the
+    State of Florida, without regard to conflict-of-law principles.
+
+
+For all questions about licensing, modifications, redistribution, or
+non-PSO commercial use, contact:
+
+    architect@authoritygate.com

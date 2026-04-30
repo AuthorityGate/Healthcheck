@@ -1,0 +1,37 @@
+# Generated reports
+Reports/
+*.html
+*.docx
+
+# Smoke / scratch
+_smoke.*
+e2e.*
+word-smoke.*
+
+# GUI persistent state (lives in %APPDATA% but block accidental copies)
+state.json
+gui-state.json
+
+# Reference material (BSD-licensed third-party — kept locally for design reference)
+Sydi_Example/
+
+# OS + editor scratch
+*.swp
+*.bak
+*.orig
+.DS_Store
+Thumbs.db
+
+# PowerShell profile / module cache
+*.psbuildpatched
+
+# Local credential exports — never commit
+*.cred
+*.clixml
+
+# Crash trap log written by Start-HorizonHealthCheckGUI on startup failure
+last-error.log
+
+# Local toolchain state - never commit
+.wrangler/
+.claude/
